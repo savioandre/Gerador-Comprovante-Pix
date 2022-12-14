@@ -1,2 +1,2 @@
-# Gerador-Comprovante-Pix
-Gerando comprovantes Pix
+# Gerador de Comprovantes Pix
+> Gerando comprovantes Pix
