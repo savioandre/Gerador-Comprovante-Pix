@@ -1,0 +1,242 @@
+@font-face {
+    font-family: 'Halenoir';
+    src: url(./Fontes/HalenoirCompact-Medium.otf);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Halenoir';
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --tl: #000;
+    --ds: #888888;
+}
+
+body {
+    background: #ccc;
+}
+
+body > div {
+    margin: 0 20px;
+}
+
+.comprov {
+    padding: 20px;
+    background: #fff;
+    max-width: 350px;
+    margin: 20px auto;
+}
+
+.tit-sect {
+    font-size: 18px;
+}
+
+.title-name {
+    font-size: 40px;
+}
+
+#id {
+    word-break: break-all;
+}
+
+/* Header */
+.header,
+.logo {
+    width: 100%;
+}
+
+.logo img {
+    width: 40px;
+    filter: grayscale(1);
+    opacity: 0.6;
+}
+
+.header .info-desc p {
+    color: var(--ds);
+    font-size: 18px;
+    margin-top: 4px;
+}
+
+.end-inf {
+    margin-top: 8px;
+}
+
+/* Header */
+ul li {
+    list-style: none;
+    margin: 16px 0;
+}
+
+li.el {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li.el .el-head {
+    margin-right: 50px;
+}
+
+li.el .el-value {
+    text-align: end;
+}
+
+.el-title {
+    font-weight: 700;
+    color: var(--tl);
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: 40px 0;
+}
+
+.title-section span {
+    line-height: 0;
+    margin-right: 16px;
+}
+
+.el-desc,
+.foot-ovd {
+    font-weight: 200;
+    color: var(--ds);
+    font-size: 18px;
+}
+
+.footer .desc,
+.footer .id {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--tl);
+}
+
+.desc {
+    margin: 30px 0 20px 0;
+}
+
+.hlp {
+    margin: 16px 0;
+}
+
+.hlp a {
+    text-decoration: none;
+    color: #820ad1;
+}
+
+/* Form */
+.init-sel {
+    margin: 20px auto;
+    max-width: 500px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+#init-selt {
+    margin-top: 16px;
+}
+
+#init-selt label {
+    background: #fff;
+    width: 120px;
+    border-radius: 10px;
+    height: 120px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#init-selt img {
+    height: 100px;
+    width: 100px;
+}
+
+.in-btn {
+    display: flex;
+    gap: 16px;
+}
+
+#init-selt .in-btn input {
+    opacity: 0;
+    position: absolute;
+}
+
+.formulario {
+    max-width: 650px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.formulario input, .formulario select, .btn-next {
+    border: 0;
+    outline: 0;
+    padding: 0.8em;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    font-size: 16px;
+    color: #424242;
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    resize: none;
+}
+
+.formulario input:focus {
+    color: #3cafe7;
+    -moz-box-shadow: 0 0px 2px #3cafe7 !important;
+    -webkit-box-shadow: 0 0px 2px #3cafe7 !important;
+    box-shadow: 0 0px 2px #3cafe7 !important;
+}
+
+.formulario .btn-submit, input.btn-g, .btn-next {
+    color: #fff;
+    background: #3cafe7;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.formulario .btn-submit:hover {
+    background: #1a95d3;
+    -moz-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+    -webkit-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+    box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+}
+
+.formulario textarea {
+    height: 174px;
+}
+
+.title-i {
+    margin: 8px 0;
+}
+
+label {
+    display: flex;
+    align-items: flex-end;;
+}
+
+label input.btn-g {
+    width: fit-content;
+    margin-left: 10px;
+}
+
+label input.btn-g:hover {
+    background: #1a95d3;
+}
+
+.sel-inst {
+    width: 40%;
+    padding: 14px 8px;
+    text-align: initial;
+}

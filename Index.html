@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles.css">
+    <title>Gerador de Comprovantes</title>
+</head>
+
+<body>
+    <div class="data">
+        <div class="init-sel">
+            <h1>Selecione a Agência do Pix</h1>
+            <form action="" method="get" id="init-selt">
+                <div class="in-btn">
+                    <label id="i-bb" for="bb">
+                        <input type="radio" id="bb" name="inst" value="Banco do Brasil" />
+                        <img src="./Imagens/logo-bb.webp" alt="Banco do Brasil">
+                    </label>
+
+                    <label id="i-nu" for="nu">
+                        <input type="radio" id="nu" name="inst" value="Nubank" />
+                        <img src="./Imagens/inst-logo-nubank.png" alt="Nubank">
+                    </label>
+                </div>
+
+                <input type="submit" value="Avançar" class="btn-next">
+            </form>
+        </div>
+        <form class="formulario" method="post" action="#" style="display: none;">
+            <div class="info-re">
+                <h2 class="title-i">Informações do remetente</h2>
+
+                <input type="text" id="name-u" placeholder="Nome Completo" required="">
+                <input type="number" id="value-u" placeholder="Valor" required="">
+
+                <label for="agency-u">
+                    <input type="number" id="agency-u" name="agency-u" placeholder="Agência (Apenas os 4 números)"
+                        required="">
+                    <input class="btn-g" type="button" value="Gerar">
+                </label>
+
+                <label for="account-u">
+                    <input type="number" id="account-u" name="account-u" placeholder="Conta (Apenas os 6 números)"
+                        required="">
+                    <input class="btn-g" type="button" value="Gerar">
+                </label>
+            </div>
+            <div class="info-re">
+                <h2 class="title-i">Informações do destinatário</h2>
+
+                <input type="text" id="name-i" placeholder="Nome Completo" required="">
+                <label for="inst-i" required="">
+                    <span class="sel-inst">Selecione a Instituição</span>
+                    <select name="Selecione a Instituição" id="inst-i" required="">
+                        <option value="BCO DO NORDESTE DO BRASIL S.A.">BCO DO NORDESTE DO BRASIL S.A.</option>
+                        <option value="NU Pagamentos S.A.">NU Pagamentos S.A.</option>
+                        <option value="PagSeguro S.A.">PagSeguro Internet S.A.</option>
+                    </select>
+                </label>
+
+                <label for="cpf">
+                    <input type="number" id="cpf-i" placeholder="CPF (Apenas os 11 números)" required="" name="cpf">
+                    <input class="btn-g" type="button" value="Gerar">
+                </label>
+
+                <label for="agency-i">
+                    <input type="number" id="agency-i" name="agency-i" placeholder="Agência (Apenas os 4 números)"
+                        required="">
+                    <input class="btn-g" type="button" value="Gerar">
+                </label>
+
+                <label for="account-i">
+                    <input type="number" id="account-i" name="account-i" placeholder="Conta (Apenas os 6 números)"
+                        required="">
+                    <input class="btn-g" type="button" value="Gerar">
+                </label>
+
+            </div>
+
+            <input type="submit" value="Gerar Comprovante" class="btn-submit">
+        </form>
+    </div>
+
+    <div class="layout" style="display: none;">
+        <div class="doc">
+            <div class="comprov">
+                <div class="header">
+                    <div class="logo">
+                        <img src="./Imagens/inst-logo-nubank.png" alt="Instituição Nubank">
+                    </div>
+                    <div class="title">
+                        <h1 class="title-name">
+                            Comprovante de transferência
+                        </h1>
+                    </div>
+                    <div class="info-desc">
+                        <p class="sub-data">
+                            <span class="data">05 DEZ 2022</span>&nbsp;-&nbsp;<span class="hor">10:04:55</span>
+                        </P>
+                    </div>
+                </div>
+                <div class="main">
+                    <ul class="list-description">
+                        <!-- Tipo e Valor -->
+                        <li class="el">
+                            <div class="el-head">
+                                <h3 class="el-title">
+                                    Valor
+                                </h3>
+                            </div>
+                            <div class="el-value">
+                                <p class="el-desc">R$&nbsp;<span id="value">120,00</span></p>
+                            </div>
+                        </li>
+                        <li class="el">
+                            <div class="el-head">
+                                <h3 class="el-title">
+                                    Tipo de transferência
+                                </h3>
+                            </div>
+                            <div class="el-value">
+                                <p class="el-desc">
+                                    Pix
+                                </p>
+                            </div>
+                        </li>
+                        <!-- Destino -->
+                        <li class="title-section">
+                            <span>
+                                <svg width="26" height="23" viewBox="0 0 26 23" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M2.64014 5.10144H22.9394V13.6688H20.9394V7.10144H4.64014V16.5213H13.5464V18.5213H2.64014V5.10144ZM20.3251 14.7695V18.9595L22.4705 16.8141L23.8847 18.2284L19.3251 22.7879L14.7655 18.2284L16.1798 16.8141L18.3251 18.9595V14.7695H20.3251Z"
+                                        fill="black" />
+                                    <circle cx="12.776" cy="11.7559" r="2.07654" stroke="black" stroke-width="1.5" />
+                                </svg>
+                            </span>
+                            <h3 class="tit-sect destiny">Destino</h3>
+                        </li>
+
+                        <li class="el">
+                            <div class="el-head">
+                                <h3 class="el-title">
+                                    Nome
+                                </h3>
+                            </div>
+                            <div class="el-value">
+                                <p class="el-desc">
+                                    <span id="name-des">JANE DOE</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="el">
+                            <div class="el-head">
+                                <h3 class="el-title">
+                                    CPF
+                                </h3>
+                            </div>
+                            <div class="el-value">
+                                <p class="el-desc">
+                                    ***.<span id=cpf>021.737</span>-**
+                                </p>
+                            </div>
+                        </li>
+                        <li class="el">
+                            <div class="el-head">
+                                <h3 class="el-title">
+                                    Instituição
+                                </h3>
+                            </div>
+                            <div class="el-value">
+                                <p class="el-desc">
+                                    <span id="bco">BCO DO NORDESTE DO BRASIL S.A.</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="el">
+                            <div class="el-head">
+                                <h3 class="el-title">
+                                    Agência
+                                </h3>
+                            </div>
+                            <div class="el-value">
+                                <p class="el-desc">
+                                    <span id="agn">0541</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="el">
+                            <div class="el-head">
+                                <h3 class="el-title">
+                                    Conta
+                                </h3>
+                            </div>
+                            <div class="el-value">
+                                <p class="el-desc">
+                                    <span id="cnt">15000-6</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="el">
+                            <div class="el-head">
+                                <h3 class="el-title">
+                                    Tipo de conta
+                                </h3>
+                            </div>
+                            <div class="el-value">
+                                <p class="el-desc">Conta&nbsp;<span id="sel-tp">corrente</span></p>
+                            </div>
+                        </li>
+                        <!-- Origem -->
+                        <li class="title-section">
+                            <span>
+                                <svg width="26" height="23" viewBox="0 0 26 23" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M2.64014 5.88501H22.9394V14.4524H20.9394V7.88501H4.64014V17.3048H13.5464V19.3048H2.64014V5.88501Z"
+                                        fill="black" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M12.776 13.866C13.5086 13.866 14.1025 13.2721 14.1025 12.5394C14.1025 11.8068 13.5086 11.2129 12.776 11.2129C12.0434 11.2129 11.4495 11.8068 11.4495 12.5394C11.4495 13.2721 12.0434 13.866 12.776 13.866ZM12.776 15.366C14.3371 15.366 15.6025 14.1005 15.6025 12.5394C15.6025 10.9784 14.3371 9.71289 12.776 9.71289C11.2149 9.71289 9.94946 10.9784 9.94946 12.5394C9.94946 14.1005 11.2149 15.366 12.776 15.366Z"
+                                        fill="black" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M18.3252 22.1573L18.3252 17.9673L16.1798 20.1127L14.7656 18.6985L19.3252 14.1389L23.8848 18.6985L22.4706 20.1127L20.3252 17.9673L20.3252 22.1573L18.3252 22.1573Z"
+                                        fill="black" />
+                                </svg>
+                            </span>
+                            <h3 class="tit-sect origin">Origem</h3>
+                        </li>
+
+                        <li class="el">
+                            <div class="el-head">
+                                <h3 class="el-title">
+                                    Nome
+                                </h3>
+                            </div>
+                            <div class="el-value">
+                                <p class="el-desc">
+                                    <span id="name-orig">Francisco Doe</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="el">
+                            <div class="el-head">
+                                <h3 class="el-title">
+                                    Instituição
+                                </h3>
+                            </div>
+                            <div class="el-value">
+                                <p class="el-desc">
+                                    <span id="inst-orig">NU PAGAMENTOS - IP</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="el">
+                            <div class="el-head">
+                                <h3 class="el-title">
+                                    Agência
+                                </h3>
+                            </div>
+                            <div class="el-value">
+                                <p class="el-desc">
+                                    <span id="agn-origin">0002</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="el">
+                            <div class="el-head">
+                                <h3 class="el-title">
+                                    Conta
+                                </h3>
+                            </div>
+                            <div class="el-value">
+                                <p class="el-desc">
+                                    <span id="orig-account">
+                                        31248984-9
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer">
+                    <div class="desc">
+                        <p class="fo-p desc-footer">
+                            NU Pagamentos S.A. - Instituição de Pagamento<br>
+                            CNPJ 18.236.120/0001-58
+                        </p>
+                    </div>
+                    <div class="id">
+                        <p class="fo-p id-footer">
+                            ID da transação:&nbsp;<span id="id"></span>
+                        </p>
+                    </div>
+                    <div class="end-inf">
+                        <span class="msg">Estamos aqui para ajudar se você tiver alguma dúvida.</span>
+                    </div>
+                    <div class="hlp">
+                        <a href="/">
+                            <span>Me ajuda</span>
+                            <span>
+                                <svg width="20" height="6" viewBox="0 0 20 6" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.3042 3.02949H18.9335M18.9335 3.02949L16.5654 0.661377M18.9335 3.02949L16.5654 5.3976"
+                                        stroke="#820AD1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="foot-ovd">
+                        <span class="ovd">
+                            Ouvidoria: 0800 887 0463,<br>
+                            atendimento em dias úteis, das 09h às 18h (horário de São Paulo).
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./Main.js"></script>
+
+</html>
