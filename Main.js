@@ -2,10 +2,10 @@ document.querySelectorAll('form').forEach((form) => {
     form.addEventListener('submit', (i) => {
         i.preventDefault();
     })
-})
+});
 
 function IdGenerator() {
-    var chars = "0123456789abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJLMNOPQRSTUVWXYZ0123456789";
+    var chars = "01234567890123456789abcdef01234567890123456789ghijkl01234567890123456789mnopqr01234567890123456789stuvwx01234567890123456789yzABCDEFGHIJLMNOPQRSTUVWXYZ01234567890123456789";
     var passwordLength = 32;
     var password = "";
 
@@ -14,7 +14,16 @@ function IdGenerator() {
         password += chars.substring(randomNumber, randomNumber + 1);
     }
     return password
-}
+};
+
+function Data() {
+    const Data = new Date;
+    let Month = new Intl.DateTimeFormat('pt-BR', {month: "short"}).format(new Date("1-1-2021")).replace(/['.]/g, '')
+    const TimeDate = `${Data.getDate().toString()} ${Month.toUpperCase()} ${Data.getFullYear().toString()}`;
+    const TimeHour = `${Data.getHours()}:${Data.getMinutes()}:${Data.getSeconds()}`;
+    const FormatDate = `${TimeDate} - ${TimeHour}`;
+    return FormatDate
+};
 
 document.querySelector('form.formulario').addEventListener('submit', () => {
 
@@ -60,17 +69,22 @@ document.querySelector('form.formulario').addEventListener('submit', () => {
     let getInsti = document.querySelector('#inst-i').value;
     document.querySelector('#bco').innerHTML = getInsti;
 
+    //** Get Type Account **
+    let getType = document.querySelector('#type-i').value;
+    document.querySelector('#sel-tp').innerHTML = getType;
+
+    document.querySelector('.sub-data').innerHTML = Data();
     document.querySelector('#id').innerHTML = IdGenerator();
 
     // ** Change Layout **
     document.querySelector('.data').setAttribute('style', 'display: none');
     document.querySelector('.layout').removeAttribute('style');
-})
+});
 
 document.querySelector('form#init-selt').addEventListener('submit', () => {
     document.querySelector('.init-sel').setAttribute('style', 'display: none');
     document.querySelector('.formulario').setAttribute('style', 'display: default');
-})
+});
 
 document.querySelectorAll('input[type="radio"]').forEach((i) => {
     i.addEventListener('click', () => {
@@ -79,4 +93,4 @@ document.querySelectorAll('input[type="radio"]').forEach((i) => {
 
         i.closest('label').setAttribute('style', 'border: 2px solid #3cafe7;');
     })
-})
+});

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Styles.css">
-    <title>Gerador de Comprovantes</title>
+    <title>Gerador de Comprovantes 📄</title>
 </head>
 
 <body>
@@ -53,11 +53,19 @@
 
                 <input type="text" id="name-i" placeholder="Nome Completo" required="">
                 <label for="inst-i" required="">
-                    <span class="sel-inst">Selecione a Instituição</span>
+                    <span class="sel-hd">Selecione a Instituição</span>
                     <select name="Selecione a Instituição" id="inst-i" required="">
                         <option value="BCO DO NORDESTE DO BRASIL S.A.">BCO DO NORDESTE DO BRASIL S.A.</option>
                         <option value="NU Pagamentos S.A.">NU Pagamentos S.A.</option>
                         <option value="PagSeguro S.A.">PagSeguro Internet S.A.</option>
+                    </select>
+                </label>
+
+                <label for="type-i" required="">
+                    <span class="sel-hd">Tipo de Conta</span>
+                    <select name="Selecione a Instituição" id="type-i" required="">
+                        <option value="Corrente">Corrente</option>
+                        <option value="Poupança">Poupança</option>
                     </select>
                 </label>
 
@@ -83,7 +91,6 @@
             <input type="submit" value="Gerar Comprovante" class="btn-submit">
         </form>
     </div>
-
     <div class="layout" style="display: none;">
         <div class="doc">
             <div class="comprov">
@@ -97,9 +104,7 @@
                         </h1>
                     </div>
                     <div class="info-desc">
-                        <p class="sub-data">
-                            <span class="data">05 DEZ 2022</span>&nbsp;-&nbsp;<span class="hor">10:04:55</span>
-                        </P>
+                        <p class="sub-data"></P>
                     </div>
                 </div>
                 <div class="main">
@@ -112,7 +117,7 @@
                                 </h3>
                             </div>
                             <div class="el-value">
-                                <p class="el-desc">R$&nbsp;<span id="value">120,00</span></p>
+                                <p class="el-desc">R$&nbsp;<span id="value"></span></p>
                             </div>
                         </li>
                         <li class="el">
@@ -149,7 +154,7 @@
                             </div>
                             <div class="el-value">
                                 <p class="el-desc">
-                                    <span id="name-des">JANE DOE</span>
+                                    <span id="name-des"></span>
                                 </p>
                             </div>
                         </li>
@@ -161,7 +166,7 @@
                             </div>
                             <div class="el-value">
                                 <p class="el-desc">
-                                    ***.<span id=cpf>021.737</span>-**
+                                    ***.<span id=cpf></span>-**
                                 </p>
                             </div>
                         </li>
@@ -173,7 +178,7 @@
                             </div>
                             <div class="el-value">
                                 <p class="el-desc">
-                                    <span id="bco">BCO DO NORDESTE DO BRASIL S.A.</span>
+                                    <span id="bco"></span>
                                 </p>
                             </div>
                         </li>
@@ -185,7 +190,7 @@
                             </div>
                             <div class="el-value">
                                 <p class="el-desc">
-                                    <span id="agn">0541</span>
+                                    <span id="agn"></span>
                                 </p>
                             </div>
                         </li>
@@ -197,7 +202,7 @@
                             </div>
                             <div class="el-value">
                                 <p class="el-desc">
-                                    <span id="cnt">15000-6</span>
+                                    <span id="cnt"></span>
                                 </p>
                             </div>
                         </li>
@@ -208,7 +213,7 @@
                                 </h3>
                             </div>
                             <div class="el-value">
-                                <p class="el-desc">Conta&nbsp;<span id="sel-tp">corrente</span></p>
+                                <p class="el-desc">Conta <span id="sel-tp"></span></p>
                             </div>
                         </li>
                         <!-- Origem -->
@@ -238,7 +243,7 @@
                             </div>
                             <div class="el-value">
                                 <p class="el-desc">
-                                    <span id="name-orig">Francisco Doe</span>
+                                    <span id="name-orig"></span>
                                 </p>
                             </div>
                         </li>
@@ -262,7 +267,7 @@
                             </div>
                             <div class="el-value">
                                 <p class="el-desc">
-                                    <span id="agn-origin">0002</span>
+                                    <span id="agn-origin"></span>
                                 </p>
                             </div>
                         </li>
@@ -274,9 +279,7 @@
                             </div>
                             <div class="el-value">
                                 <p class="el-desc">
-                                    <span id="orig-account">
-                                        31248984-9
-                                    </span>
+                                    <span id="orig-account"></span>
                                 </p>
                             </div>
                         </li>
